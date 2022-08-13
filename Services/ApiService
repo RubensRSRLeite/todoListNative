@@ -1,0 +1,26 @@
+const url = '';// recebe ip
+
+export const ApiService={
+
+    get(endPoint){
+        return fetch(`${url}${endPoint}`)
+        .then(Response => Response.json())
+    },
+
+    post(endPoint, data){
+        return fetch(`${url}${endPoint}`,{
+            method: 'POST',
+            body: json.stringfy(data),
+
+        })
+        .then(Response => Response.json())
+    },
+
+    delete(endPoint, id){
+        return fetch(`${url}${endPoint}?id=${id}`, {
+            method: 'DELETE'
+            
+        })
+        .then(Response => Response.json())
+    }
+}
